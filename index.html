@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matt Saunders Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b618f8db71.js" crossorigin="anonymous"></script>
+    <script src="index.js" > </script>
+    <script type="text/javascript"
+src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("Wsbv67RKl9n30YysZ");
+   })();
+</script>
+</head>
+
+<body>
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/Logo (1).svg" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()"> <a class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                        href="#">About</a> </li>
+                <li class="nav__link"> <a class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                        href="#projects">Projects</a> </li>
+                <li class="nav__link" onclick="toggleModal()"> <a class="nav__link--anchor link__hover-effect link__hover-effect--black" 
+                        href="#">Contact</a> </li>
+                <li class="nav__link click" onclick="toggleContrast()"> <a class="nav__link--anchor link__hover-effect link__hover-effect--black"
+                        href="#"> <i class="fa fa-circle-half-stroke"></i> </a> </li>
+            </ul>
+        </nav>
+
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title"> Hey </h1>
+                <h1 class="title orange">I'm Matt.</h1>
+                <p class="header__para">I am a <b class="orange">Frontend Developer</b> with a strong passion for
+                    building web applications with great user experiences.
+                    <br>
+                    Here's a bit more <b class="orange click" onclick="toggleModal()">about me.</b>
+                </p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com" class="social__link click" target=" _blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/Mattyhooo" class="social__link click" target=" _blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="#" class="social__link click">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+        <button class="mail_btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button> </a>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title-about">Here's a bit about me. </h3>
+                <h4 class="modal__sub-title modal__sub-title--about"> Frontend Developer</h4>
+                <p class="modal__para">
+                    I am a 29 year old <b class="orange">frontend developer</b> with a strong passion for developing web
+                    applications with
+                    great <b class="orange"> user experiences. </b>
+                    <br>
+                    I currently work on extremely difficult engineering problems and learn from a team consisting of
+                    some of the most <b class="orange">talented</b> and <b class="orange">experienced</b> engineers
+                    everday.
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--image" src="./assets/html.png" alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--image" src="./assets/css-3.png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--image" src="./assets/js.png" alt="">
+                        <span class="language__name">Javascript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--image" src="./assets/react.png" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h4 class="modal__sub-title modal__subtitle--contact">
+                    I'd love to hear from you.
+                </h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item__label">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item__label">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item__label">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">
+                        Send it my way
+                    </button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thank you for the message! I am looking forward to speaking to you soon.
+                </div>
+            </div>
+            
+        </div>
+        <img src="./assets/semi circle.svg" class="shape shape--0">
+        <img src="./assets/circle.svg" class="shape shape--1">
+        <img src="./assets/squiggly.svg" class="shape shape--2">
+        <img src="./assets/semi circle.svg" class="shape shape--3">
+        <img src="./assets/triangle.svg" class="shape shape--4">
+        <img src="./assets/circle.svg" class="shape shape--5">
+        <img src="./assets/squiggly.svg" class="shape shape--6">
+        <img src="./assets/circle.svg" class="shape shape--7">
+        <img src="./assets/semi circle.svg" class="shape shape--8">
+       
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">
+                    Here are some of my <b class="orange">projects</b>
+                </h1>
+                <ul class="projects__list">
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Library - eCommerce Project
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, Javascript
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente blanditiis fugit
+                                    architecto a itaque? Debitis iste temporibus voluptas quia doloribus, quam quae
+                                    voluptatibus minima minus animi natus incidunt laborum dignissimos?
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Treact - Website Template Sales Page
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, Javascript
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente blanditiis fugit
+                                    architecto a itaque? Debitis iste temporibus voluptas quia doloribus, quam quae
+                                    voluptatibus minima minus animi natus incidunt laborum dignissimos?
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__image" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Filmrr - Movie Review / Recommendations
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML, CSS, Javascript, React,
+                                </h4>
+                                <p class="project__description--para">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente blanditiis fugit
+                                    architecto a itaque? Debitis iste temporibus voluptas quia doloribus, quam quae
+                                    voluptatibus minima minus animi natus incidunt laborum dignissimos?
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-brands fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project__description--link">
+                                        <i class="fa-solid fa-link"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <figure>
+                    <img class="footer__logo--image" src="./assets/Logo (1).svg" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://github.com/Mattyhooo" target="_blank" class="footer__social__link
+link__hover-effect 
+link__hover-effect-white
+">GitHub</a>
+                    <a href="http:/www.linkedin.com" target=" _blank" class="footer__social__link
+link__hover-effect 
+link__hover-effect-white
+">Linkedin</a>
+                    <a href="#" onclick="toggleModal()" class="footer__social__link
+link__hover-effect 
+link__hover-effect-white
+">Contact</a>
+                    <a href="#" class="footer__social__link
+link__hover-effect 
+link__hover-effect-white
+">CV</a>
+                </div>
+                <div class="footer__copyright">
+                    Copyright © Matthew Saunders 2022
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
