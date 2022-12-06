@@ -9,6 +9,11 @@
 
 html{
     scroll-behavior: smooth;
+
+}
+
+body{
+    overscroll-behavior: none;
 }
 li {
     list-style-type: none;
